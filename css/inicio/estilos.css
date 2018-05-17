@@ -1,0 +1,149 @@
+/* importaremos una fuenta para la marquesinas de google fonts*/
+
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+@import url(menu_inicial.css);
+@import "modal.css";
+
+body{
+    background: linear-gradient(black,red,black,red,black,red,black,black);
+  /*  background-size: cover;
+    -moz-background-size: cover;
+     -webkit-background-size: cover;
+    -o-background-size: cover;*/
+}
+
+.contenedor{
+      width: 90%;
+      max-width: 1400px;
+      margin:0 auto;
+      background:black;
+}
+
+.cabeza{ /*contendra el gif  animado del titulo*/
+    width: 50%;
+    margin:auto;  
+}
+
+.cabeza img{  /*centramos titulo gif */
+    width: 100%;
+    margin:auto;
+    display: block;
+}
+
+
+.linea{ /*es un section  que contendra la marquesina*/
+    width:65%;  
+     background:red; 
+    background: radial-gradient(black 20%, red 50%, black 20%);
+    padding: 20px;
+    float:left;
+    box-sizing: border-box;
+    font-family: 'Berkshire Swash', cursive;
+    color:white;
+    font-size:20px;
+    /* border: 1px solid white;*/
+}
+
+.linea marque{ /*la marquesina*/
+    width:100%;
+    height: auto;
+   display: inline-block;
+    
+}
+
+
+.logo{ /* es un section que contendra la imagen de publicidad*/
+  
+    width:35%;
+    height: 75%;
+    background:white;
+    
+    float:left;
+    box-sizing: border-box;
+   
+    
+}
+
+.logo img{ /* la imagen de la publicidad*/
+    width:100%;
+    height:100%;
+  
+}
+
+footer{/* pie de pagina*/
+    
+ clear: both;/* no hace caso alos que tenga float*/
+    float: left;
+    margin-top: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color:#211B19;
+    opacity: 0.5;
+    color:white;
+    margin-bottom: 3px;
+    text-align:right;
+}
+
+/*redimensionamos para hacerlos responsive*/
+@media(max-width: 800px){
+    
+   .logo{
+       width: 100%; 
+      
+    }
+    .linea{
+        width:100%;
+    }
+ 
+    header{
+        width:100%;
+        
+    }
+    
+    .cabeza{ /*contendra el gif  animado del titulo*/
+    width: 100%;/*lo agrando al momento d eponerlo a tamaño movil*/
+    margin:auto;  
+}
+
+/* estilos de la ventana modal*/
+
+ #ven_mod{
+        
+      width:90%;
+      height: 100%;
+     
+    }
+   
+    
+    #ven_mod h1{
+    
+    font-size: 21px;
+}
+
+    
+    div.formula{
+        width: 250px;
+        padding:10px 0;
+        height:300px; 
+        margin:60px -25px;
+        
+    }
+    
+    #formu{
+        width: 100%;
+        
+  
+    }
+    
+    div.cerrar_mod{
+        
+       width:100%;
+       margin: auto;
+       
+       text-align: left;/*a este no le hace caso, porque manda mas el estilo en la etiqueta misma*/
+       margin-top: -25px;/*àra que se coloque dentro del formulario*/
+       margin-left: -20px;
+       
+    }
+    
+}

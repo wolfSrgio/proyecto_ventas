@@ -1,0 +1,187 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:black;
+   
+}
+
+
+div.superior{ /*  poner imagen de fondo en mi header  */
+           
+             height: 150px;
+             text-align: center;
+             background-image:url("../../img_paginas/logowolf.png");
+             background-repeat:no-repeat;
+             background-position: 50% 50%;/*centro*/
+             background-size: 100% 100%;/*expande por todo el contenedor*/
+             border:1px solid blue;
+			 width:80%;
+			 margin:auto;
+}
+
+
+
+
+/*CONTENEDOR DE BANNER Y FORMU*/
+.form_wrap{
+    width: 1040px;/*tambien se puede hacer con %*/
+    height:500px;
+    /*50px:arriba,abajo auto:der,izq(osea lo centra)*/
+    margin:20px auto;
+    background: white;
+    display:flex;/*para que los contenidos hijos(no nietos) se peguen en columnsas*/
+    /*border-radius: 10px;*/
+    overflow: hidden;/*para que los bordes de sus contenedores o lo
+     que sea , NO SE SALGA DE SUS LIMITES*/
+     /*sombra : 0px 0px : centrado */
+    box-shadow: 0px 0px 80px rgba(255,0,0,1); /* rojo con opacidad*/ 
+   /*box-shadow: 5px 10px red;*/
+}
+
+/* BANER CONTACTO*/
+   .contact_infor{
+   width:40%; /* de 1040px ,si quiero que sea la mitad es 100%
+     es por el flex box  que multiplico x2 el ancho
+   OJO , esto siempre en cuando al otro hijo , no le dea width,
+    si le doy width , ya puedo poner 50%la mitad; */
+    border:2px solid red;
+    position:relative;
+    
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.img{
+     background-image: url("../../img_paginas/fondo_registro.jpg");
+    background-size:100% 100%;/*ocupa todo el ancho
+    cover , tambien funciona pero se come alguna parte d ela imagen */
+     opacity: 0.4;   
+     width: 100%;
+     height:100%;
+     position:absolute; /* respecto a su contenedor , OJO, su contenedor
+                o padre tiene que estar posicionado absolute/relative/fixed*/
+                
+}
+
+.info_title {
+   
+    color:black;
+    font-size: 50px;
+    text-align: center;
+    margin-left: 8px;
+    width: 100%;
+    
+    
+   
+}
+.info_items p:nth-child(1){
+    color:red;
+    padding: 20px;
+     font-size: 20px;
+}
+.info_items p:nth-child(2){
+    color:green;
+    padding-left: 20px;
+     font-size: 20px;
+}
+
+/*FORMULARIO*/
+
+form.form_contac{
+     border:2px solid blue;
+    padding:20px;
+     width:60%;/* el 1040 se dividira  40% y 60%*/
+     
+}
+
+form.form_contac p{
+    font-size:60px;
+    padding:10px;
+    color:red;
+    
+     text-align: center;  
+}
+
+div.user_info{
+    /*para que sus hijos se pongan en columna*/
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info label{
+    
+    font-size:20px;
+    font-weight: bold;
+}
+
+input.texto{
+     margin:10px;
+     border:none;
+     border-bottom: 2px solid grey;
+     font-family: "Open sans";
+     color:blue;
+    
+     font-size:15px;
+}
+
+input[type="button"]{
+    
+   padding: 15px;/*se agrandara el boton*/
+    margin-top:10px;
+    background: grey;
+    
+   
+    border-radius:10px;
+    cursor:pointer;
+    
+}
+
+footer{
+    
+    clear: both;/* no hace caso alos que tenga float*/
+   
+    margin: auto;
+    box-sizing: border-box;
+    width: 80%;
+    padding: 20px;
+    background: #071914;
+    color:white;
+    margin-bottom: 5px;
+}
+
+
+
+
+
+/*CONTROLAR LOS ANCHOS DE DISPOSITIVOS*/
+@media(max-width: 450px){
+    /*
+    body{
+        background: yellow;
+    }
+    */
+    
+    .form_wrap{
+        width:90%;
+        display:table;
+    }
+    
+    .contact_infor{
+        width:100%;
+     }
+	 
+     form.form_contac{
+          width:90%;
+     }
+	 
+	 div.superior{
+		 width:100%;
+	 }
+    
+}

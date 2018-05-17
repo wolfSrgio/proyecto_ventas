@@ -1,0 +1,48 @@
+
+#ven_mod{
+    
+   width:90%;
+    height:100%;
+    
+    margin-top: -110px;
+   
+    padding: 50px;
+    border:2px solid blue;
+    position:fixed;
+    z-index: 1;
+    text-align: center;
+  
+    background-image: url("../../img_paginas/fondo_mod.png");  /*imagen creada con pagina online*/
+    
+   /* visibility:hidden;/*oculat elemento, pero no funcionaria  con el eventop jquery*/
+    display:none;
+   /*Los dos atributos CSS display:none y visibility:hidden permiten ocultar un elemento en el navegador.
+   Sin embargo, existe una pequeña diferencia: visibility: hidden oculta el elemento, pero sigue
+   conservando el espacio que ocupaba, los elementos adyacentes conservan su ubicación*/
+   
+}
+
+
+
+
+div.formula{
+    background:black;
+    color:white;
+    border:3px solid red;
+    width: 72%;
+    height: 45%;
+    margin:50px auto;/* arriba/abajo   der/izq*/
+   
+   
+    
+}
+
+#formu{
+    
+    background:#2E2E2E;/*gris oscuro*/
+    width:80%;
+    margin:30px auto;/*siempre con un width*/
+    padding:20px;
+    color:black;
+   
+}

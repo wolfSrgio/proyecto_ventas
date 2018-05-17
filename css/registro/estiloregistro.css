@@ -1,0 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background:black;
+    font-family: Arial;
+}
+.contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin:0 auto;
+    background: pink;
+}
+
+div{ /*  poner imagen de fondo en mi header  */
+           
+             height: 150px;
+             text-align: center;
+             background-image:url("../images/logowolf.png");
+             background-repeat:no-repeat;
+             background-position: 50% 50%;/*centro*/
+             background-size: 100% 100%;/*expande por todo el contenedor*/
+             border:1px solid blue;
+}
+
+
+
+header h1{
+    color:#fff;
+    padding:20px 0;
+}
+
+.main{
+    
+    width:70%;
+    background:white;
+    padding: 20px;
+    float:left;
+    box-sizing: border-box;
+    border:6px solid green;
+}
+
+.main img{
+    width:100%;
+    height: auto;
+}
+
+aside{
+    
+   width: 29%;
+   color:white;
+   text-align: justify;
+   padding:20px;
+   margin-left: 10px;
+   box-sizing: border-box;
+    background: #071914; 
+    float:left;
+    
+}
+footer{
+    
+    clear: both;/* no hace caso alos que tenga float*/
+    float: left;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background: #071914;
+    color:white;
+    margin-bottom: 5px;
+}
+
+@media(max-width: 800px){
+    
+    body{
+        background: red;
+    }
+    div{
+        height: 100px;
+    }
+    .main{
+        width:100%;
+    }
+    aside{
+       width: 100%; 
+       margin:auto;
+       
+    }
+}

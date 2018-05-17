@@ -1,0 +1,150 @@
+
+@import "modal.css";
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+     background-color:#151515;
+    font-family: Arial;
+   
+}
+.almacenador{
+    width: 90%;
+    max-width: 1000px;
+    margin:0 auto;
+    background: pink;
+    position:relative;
+    z-index:1;
+}
+
+.fijo{
+    position:fixed;
+    width: 74.2%;
+    margin:0 auto;
+    z-index: 3;
+}
+
+ h1{
+    color:#fff  !important; /*se pone para que prevalesca tu estilo sobre los estilos de botstrap*/
+     padding:0;
+    font-family: Arial;
+}
+
+.main{
+    
+    width:60%;
+    
+    background:black;
+    border:3px solid yellow;
+    float:left;
+    box-sizing: border-box;
+    padding:10px;
+}
+
+.main img{
+    width:100%;
+    height:100%;
+}
+
+aside{  
+   width: 37%;
+   padding:20px;
+   font-size:13px;
+   color :black;  
+   margin-left: 30px;
+   box-sizing: border-box;
+   background: green; 
+   float:left;    
+}
+
+aside.artista{
+    margin-top:90px; 
+    overflow: auto;
+    height:200px; 
+}
+
+aside.venta{
+    margin-top:20px;
+    height:380px;
+}
+
+
+
+footer{
+    
+    clear: both;/* no hace caso alos que tenga float*/
+    float: left;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background: black;
+    color:white;
+    margin-bottom: 5px;
+}
+
+@media(max-width: 800px){
+    
+    body{
+        background: red;
+    }
+    .main{
+        width:100%;
+    }
+    aside{
+       width: 100%; 
+       margin:auto;/*centrar los aside*/
+    }
+    
+    aside.artista{
+      margin-top:20px;  /*quitar el margen de pantalla grande*/
+    }
+    
+    .fijo{ 
+        
+       width:90%;
+    }
+    
+  
+ #ven_mod{
+        
+      width:90%;
+      height: 100%;
+     
+    }
+   
+    
+    #ven_mod h1{
+    
+    font-size: 21px;
+}
+
+    
+    div.formula{
+        width: 250px;
+        padding:10px 0;
+        height:300px; 
+        margin:60px -25px;
+        
+    }
+    
+    #formu{
+        width: 100%;
+        
+  
+    }
+    
+    div.cerrar_mod{
+        
+       width:100%;
+       margin: auto;
+       
+       text-align: left;/*a este no le hace caso, porque manda mas el estilo en la etiqueta misma*/
+       margin-top: -25px;/*àra que se coloque dentro del formulario*/
+       margin-left: -20px;
+       
+    }
+}

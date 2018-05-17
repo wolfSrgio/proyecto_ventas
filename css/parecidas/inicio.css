@@ -1,0 +1,121 @@
+/*asignamos una fuente*/
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+@import url(banner.css);
+@import url(blog.css);
+@import url(informa.css);
+
+*{
+    box-sizing: border-box;
+    /*este borde y padding  sea dentro del mismo elemento de caja  y no se expanda*/
+}
+
+body{
+    
+    font-family: 'Hi Melody', cursive;
+    
+   /* background:#44322E;/*negro humo*/
+   background:white;
+}
+header{
+    width:92%; /* ancho del espacio de contenido*/
+  
+    height: 80px;
+    background-color:#151515;/*color de fondo para todo*/
+    color:#fff;
+    border: 1px solid blue;
+    position:fixed;/*se quede pegado */
+    /*para que comienzen desde la ezquina misma de la pantalla*/
+      top:2px;
+      margin-left:50%; /*  centrare el fixed*/
+      left:-46%;/*  centrare el fixed*/
+      z-index:100;/*para que sea el header siempre que tape alos demas*/  
+}
+
+/*para todos los conetnedores*/
+ .contenedor{
+   /*para centrar el contenido*/ 
+   width:90%;
+   margin:auto;
+  /*background-color: green;*/
+}
+
+
+
+/* estilo de  BIENVENIDA*/
+
+#bienvenidos .contenedor{
+    background:#151515; 
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    margin-left:3%;
+    left:6%;
+   
+}
+
+.copy{
+   font-size: 20px;
+   background: blue;
+   /* como p y div tiene margenes, para 
+   poder juntarlos , uno lo hago block */
+  display: inline-block;
+   margin-bottom:5px;}
+footer .contenedor{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 25px;
+background-color: green;}
+.sociales {
+    background: yellow;
+     width:100%;
+    text-align: center;
+    font-size: 28px;
+   margin: 0px;}
+.sociales a{
+    color:#4B423F;/*gris  oscuro*/
+    text-decoration: none; }
+
+@media(min-width:1024px){
+    
+    .contenedor{/*todos los contenedores */
+       width:90%;/*esten un poco centrados*/     
+    }
+    
+    
+    
+}
+
+
+@media(min-width:768px){/*tablets*/
+ /* cuando sea el ancho d etablet aplica estos valores  y a la pantalla completa tambien*/  
+    .sociales{
+       width:auto;
+    }
+    footer .contenedor{
+        /* su contenido  cada uno se va aun extremo*/
+        justify-content:space-between;
+    }
+   
+    
+ 
+    
+}
+@media(max-width:490px){/*movil*/
+   /* Solo hasta ese ancho de pagina mi imagen se reduce */
+   /*  anchos mayores ,   obtiene su tamaño normal*/
+     img.logo{ 
+        
+        width:84%;
+    }
+     
+   /* //uso esto para controlar el espacio de movil
+   
+   header {
+        background: yellow;
+    }
+  */  
+  
+    
+    
+}

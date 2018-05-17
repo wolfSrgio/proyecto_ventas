@@ -1,0 +1,85 @@
+#inpumenubar{
+    display: none;/*desaparecemos la cajita del chekbox*/
+}
+ /* el ~ <-- dice seleccionar algo*/
+   #inpumenubar:checked ~ .menu{
+       transform:translateX(0%);
+   }/* aunque este desactivado  la caja check
+   al pulsar en la caja label funciona porque estan relacionados. por el id */
+
+
+header label{
+    
+    float:right;
+    font-size: 30px;
+    margin: 7px 0;/* 8px arriba abajo y 0 a lados */ 
+    
+}
+
+header .contenedor {
+    
+   display: table;
+ 
+   
+}
+
+.menu{/* etiqueta  nav*/
+    /* el padre de nav es  div.contenedor, que no tiene position pero si lo tiene
+    header  que  por otra parte perdio su sitio por el fixed*/
+   position:absolute;
+   top:90px;/* asi que la separacion sera  desde el borde del navegador*/
+   left:0;
+   width:30%;
+   height: 200px;/*solo eso porque no quiero que ocupe toda la pagina*/
+   /*height:100vh ;  // esto para que ocupe toda la pagina*/
+    background:rgba(51,51,51,0.7);/*0.9 : transpArencia*/
+    /*transition, funciona con pseudoclases y psudelementos */ 
+    transition: all 3s;
+    /*transformpropiedad se aplica una transformación 2D o 3D a un elemento.
+    Esta propiedad le permite rotar, escalar, mover, inclinación, etc., elementos.
+    */
+    transform:translateX(-120%);/*lo transladamos horizontalmente*/  
+}
+
+
+
+.menu a{
+    display:block; /*para que ocupen todo el ancho de pantalla  cada uno*/
+    color:#fff;
+    height:50px;
+    text-decoration: none;/* quita subrayado a links*/
+    padding:15px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    cursor:pointer;
+   }
+  
+   .menu a:hover{
+       
+       background:rgba(255,255,255,0.3)
+   }
+  /*PARA HACER REPONSIVE DISEGN*/
+  
+  @media (min-width:1024px){
+  /* tamaño a partir de escritorio*/     
+  .menu{
+     position:static;/*estaba absolute*/
+     width:auto;
+     height:70px;
+     transform:translateX(0%);
+     float:right;
+     display:flex;
+     padding-top: 10px;
+    } /*ahora quitamos el boton de menu
+    que  solo era para movil */ 
+    header label{
+        display:none;
+    }
+    /*quitamos el borde de las a*/
+    .menu a{
+       border:none;   
+    }
+  }
+  
+  
+  
+   

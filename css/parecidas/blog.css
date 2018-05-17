@@ -1,0 +1,26 @@
+
+/*Cada hijo de un contenedor flex se convierte en un elemento flexible.
+Si hay texto directamente incluido en el contenedor flexible,
+se envuelve automáticamente en un elemento flexible anónimo.*/
+
+#blog .contenedor{
+     /*para que las  imagenes esten en una sola linea*/ 
+   display:flex;
+   justify-content: center;
+   flex-wrap:wrap;/* si los elementos no caben se ponga debajo*/
+    
+}
+
+#blog article{
+    margin :15px;
+}
+
+#blog img{
+ width:100%;
+   max-width: 280px;  
+}
+#blog h3,h4{
+    text-align: center
+}
+
+

@@ -1,0 +1,47 @@
+#info{ /*todo el section */
+   background-color:#151515;
+   color:white;
+   text-align:center;
+   padding:20px;
+   margin:auto auto;
+   font-size: 20px;
+
+}
+
+#info .contenedor{
+ /* div con todas las imagenes*/   
+ display:flex;/*obj en 1 sola linea*/
+ flex-wrap:wrap;/* sino caben,se pone debajo*/
+ justify-content:center;
+}
+.informa{
+ /*div imagen por imagen*/
+ margin:20px;
+}
+.informa img{
+     width:150px;
+    height: 150px;
+    border-radius:70%;
+    border:7px solid #fff;/*blanco*/   
+}
+
+.informa h4{
+    
+    color:red;
+    background:white;
+}
+
+@media(min-width:480px){
+    
+    .informa{
+        width: 40%;/*2 columnas*/
+    }
+}
+@media(min-width:1024px){
+    
+    .informa{
+        width:auto;/*4 columnas*/
+        /*las imagenes ocupan todo el ancho*/
+    }
+}
+
