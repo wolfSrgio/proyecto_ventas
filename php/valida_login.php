@@ -1,65 +1,56 @@
 <?php
- include ("lib/conexion.php");
- include ("lib/sesion.php");
- include "lib/funciones.php";
+ include ("conexion.php");
+ 
 
 
- session_start();
+ $emailogin=$_POST['ema_log'];
+ $pswlogin=$_POST['pasw_log'];
 
- $emailogin=$_POST['emalog'];
- $pswlogin=$_POST['pswlog'];
+$existe=false;
 
-
-//echo  "El email es :   ".$emailogin;
-
-
-//if($emailogin!=null && $pswlogin!=null){// comprobar que  no esten vacios
-if(!empty($emailogin) && !empty($pswlogin)){// otra manera 
-    //echo " BIEN   TIENE CONTENIDO LOS DOS";
-    $pswloginmd5=md5($pswlogin);
-    echo " original:".$pswloginmd5."<br>";
-    /*OJO: las cadenas que genera md5 , son kjuy largas y hay que acortarlas
-    son de 32 caracteres  , tambien podemos solucionarlo modificando el campo en la BD*/
-    $pswloginmd5 = substr($pswloginmd5, 0, -12);
- echo " des`pues :".$pswlogin."<br>";
-    $userlog=new Usuario();// creamos un usuario
-   $respu= $userlog->validaLogin($emailogin,$pswloginmd5,$pswlogin);//validamos el correo y contraseña con md5
-                                                         // y otra sin md5 si existe o no
-   
-   echo "****".$respu."****";
-   if($respu!==0 ){// si existe ese correo
-    //puse !== para compara el tipo de objeto con!= no salia
-
-    $autolog=new Sesion();// aqui crearemos la sesion, para que se quede grabado en el navegador 
-    $autolog->creaVariableSesion($emailogin);// llamamos ala funcion 
-
-    echo ' <script>
-    alert(" TE LOGEASTE MUY BIEN");
-    //window.location.href="../principal.php?";
-    </script>';
-   }
-   else{
-    echo "llega aqui 2";
-    header("location:login.php?errorLogin=si");
-   }
+ $conexion=conexion();
 
 
-}else{
+ if(!empty($emailogin) && !empty($pswlogin)){  //  COMPROBAR QUE TENGAN CONTENIDO 
 
-    echo "OJO  NO PUEDE IR NINGUN CAMPO VACIO";
-}
+  echo $emailogin."<br>";
+  echo $pswlogin."<br>";
 
- /* 
-  /* 
-    }*/
 
-  /*  VALORES DE USUARIOS CLAVES 
-  
-    alex --> 123;
-    pepe ---->pepe
-    hans ---->hansito
-  
-  */
+  //  BUSCANDO  DENTRO DE LA TABLA ADMINISTRADOR
 
+  $sql="SELECT  *  FROM administrador WHERE email='$emailogin' and  pasword='$pswlogin'";
+   $consulta=mysqli_query($conexion,$sql) or die(mysqli_error()); ;
+
+
+  while($fila=mysqli_fetch_array($consulta)){
+     
+    $existe=true;// para controlar la redireccion por si hay algun error 
+    header("location:sesion.php?email=$emailogin&tipo=admin");
+     
+  }
+
+  //BUSCANDO DENTRO DE LA TABLA CLIENTE 
+
+  $sql2="SELECT  *  FROM cliente  WHERE email_cli='$emailogin' and  pasword_cli='$pswlogin'";
+  $consulta2=mysqli_query($conexion,$sql2) or die(mysqli_error()); ;
+
+  while($fila2=mysqli_fetch_array($consulta2)){
+
+    $existe=true;
+    header("location:sesion.php?email=$emailogin&tipo=user");// sera un tipo usuario
+     
+  }
+
+
+  if(!$existe)//  si existe es = false
+  header("location:../index_ito.php?errorLogin=logico");
+
+
+ }//fin del if
+ else{
+  //echo "llega aqui 2";
+  header("location:../index_ito.php?errorLogin=vacio");
+ }
 
 ?>

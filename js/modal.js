@@ -6,3 +6,11 @@ function abrirmod(){
     $("#ven_mod").slideDown("slow");
    
 }
+
+function cerrarmod(){
+  /*  location.reload();*/
+    /* Oculta los elementos combinados con un movimiento deslizante. */
+    $("#ven_mod").slideUp("slow");
+ 
+}
+

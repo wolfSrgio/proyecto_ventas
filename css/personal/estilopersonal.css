@@ -1,0 +1,97 @@
+
+@import "menu_per.css";/* estilo para el menu*/
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+   background: black;
+    font-family: Arial;
+}
+
+.contenedor{
+    width: 90%;/*ocupa solo 90%*/
+    margin:0 auto;/*centra la pagina*/
+    max-width: 1000px;/* su contenido solo estara en un ancho de hasta  1000px;*/
+    background: pink;
+}
+
+header{/*contiene un  h1 con el titulo*/
+    background: blue;
+    margin: 20px 0;/*aarib/abaj  derch/iz*/
+    text-align: center;/*centra su contenido*/
+}
+
+div.logolobo{ /*  poner imagen de fondo en mi header  */
+           
+             height: 150px;
+             text-align: center;
+             background-image:url("../../img_paginas/logowolf.png");
+             background-repeat:no-repeat;
+             background-position: 50% 50%;/*centro*/
+             background-size: 100% 100%;/*expande por todo el contenedor*/
+             border:1px solid blue;
+		
+}
+
+
+.main{ /*section  hijo de contenedor 
+       que contiene  img y un parrafo con texto*/
+    
+   width:70%;/*ocupa el 70% del 90% del contenedor*/
+    background:#493834;
+    padding: 20px;
+    float:left;
+    box-sizing: border-box;/*coje desde el borde su altura ,sin padding*/
+}
+
+
+aside{
+    
+   width: 25%;/*ocupa el 25% del 90% del contenedor*/
+   padding:10px;
+   margin-top: 20px;
+   margin-left: 10px;
+   margin-bottom: 20px;
+   box-sizing: border-box;
+    background: green; 
+    float:left;
+    
+}
+
+
+.contieneimagen img{
+    width:100%;
+   /* height: auto;*/
+}
+
+
+footer{
+    
+    /*clear: both;/* no hace caso alos que tenga float*/
+    float: left;
+    margin-top: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background: grey;
+    color:white;
+    margin-bottom: 5px;
+}
+
+@media(max-width: 800px){
+    
+    body{
+        background: red;
+    }
+    .main{
+        width:100%;
+    }
+    aside{
+       width: 100%; 
+       margin:auto;
+       
+    }
+}

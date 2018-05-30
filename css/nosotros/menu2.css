@@ -1,0 +1,53 @@
+
+#inpumenubar{
+    display: none;/*desaparecemos la cajita del chekbox*/
+}
+
+header label{
+    
+    display:none;/* oculto icono*/
+    float:right;
+    font-size: 30px;
+    margin: 7px 0;
+    
+}
+
+
+
+
+
+.menu{/* etiqueta  nav*/
+    
+   /*height: 500px;/*solo eso porque no quiero que ocupe toda la pagina*/
+ }
+
+
+.menu a{
+    display:block; /*para que ocupen todo el ancho de pantalla  cada uno*/
+     color:#fff;
+        margin:5px;
+     height:60px;
+     
+    text-decoration: none;/* quita subrayado a links(enlaces))*/
+    padding:15px;
+    background-color:#151515;
+   
+    cursor:pointer;
+     border:1px solid white;
+    -webkit-border-radius:50%;/* para que sea un ovalo o redondo.,segun su contenido*/
+     transition: all 1.5s;/* efecta alos :hover etc*/
+  
+   }
+  
+   .menu a:hover{
+       
+       background: #685858;
+      
+       /* el X : significa que es horizontal*/
+      transform:translateX(-55px); /*se salga de su contenedor hacia la derecha*/
+       
+       /*background:rgba(255,255,255,0.3)*/
+   }
+
+   
+  

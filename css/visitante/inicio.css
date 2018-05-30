@@ -3,18 +3,18 @@
 @import url(banner.css);
 @import url(blog.css);
 @import url(informa.css);
-
+@import url(modal.css);/*le agrego estilos de la ventana modal*/
 *{
     box-sizing: border-box;
     /*este borde y padding  sea dentro del mismo elemento de caja  y no se expanda*/
 }
 
 body{
-    
+
     font-family: 'Hi Melody', cursive;
-    
    /* background:#44322E;/*negro humo*/
    background:white;
+   font-size: 23px;
 }
 header{
     width:92%; /* ancho del espacio de contenido*/
@@ -62,7 +62,7 @@ header{
    margin-bottom:5px;}
 footer .contenedor{
     display:flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;/* siii no entra se baja una linea hacia abajo*/
     justify-content: center;
     padding-bottom: 25px;
 background-color: green;}
@@ -72,9 +72,19 @@ background-color: green;}
     text-align: center;
     font-size: 28px;
    margin: 0px;}
+
 .sociales a{
     color:#4B423F;/*gris  oscuro*/
     text-decoration: none; }
+
+
+
+
+
+
+
+
+
 
 @media(min-width:1024px){
     

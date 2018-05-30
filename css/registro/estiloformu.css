@@ -11,7 +11,7 @@ body{
 
 div.superior{ /*  poner imagen de fondo en mi header  */
            
-             height: 150px;
+             height: 200px;
              text-align: center;
              background-image:url("../../img_paginas/logowolf.png");
              background-repeat:no-repeat;
@@ -27,8 +27,8 @@ div.superior{ /*  poner imagen de fondo en mi header  */
 
 /*CONTENEDOR DE BANNER Y FORMU*/
 .form_wrap{
-    width: 1040px;/*tambien se puede hacer con %*/
-    height:500px;
+    width: 1040px;/*  ANCHURA TOTAL  tambien se puede hacer con %*/
+    height:650px;/*  ALTURA TOTAL*
     /*50px:arriba,abajo auto:der,izq(osea lo centra)*/
     margin:20px auto;
     background: white;
@@ -51,7 +51,7 @@ div.superior{ /*  poner imagen de fondo en mi header  */
     position:relative;
     
     display: flex;
-   flex-direction: column;
+   flex-direction: column; /*para que el icono y las eletras esten uno encima del otro*/
     align-items: center;
     justify-content: center;
     
@@ -112,6 +112,7 @@ div.user_info{
     /*para que sus hijos se pongan en columna*/
     display: flex;
     flex-direction: column;
+    background:#AF9494;
 }
 
 .user_info label{
@@ -122,21 +123,29 @@ div.user_info{
 
 input.texto{
      margin:10px;
+     width: 400px;
      border:none;
      border-bottom: 2px solid grey;
      font-family: "Open sans";
-     color:blue;
+     color:blue;;
     
-     font-size:15px;
+     font-size:20px;
 }
 
-input[type="button"]{
+input.check{
+     
+    border: 2px solid red;
+    display: block;
+}
+
+.enviobot{
     
    padding: 15px;/*se agrandara el boton*/
-    margin-top:10px;
+    /*margin-top:10px;*/
     background: grey;
-    
-   
+    float: right;
+    margin-top: -50px;
+    margin-right: 20px;
     border-radius:10px;
     cursor:pointer;
     
@@ -155,7 +164,13 @@ footer{
     margin-bottom: 5px;
 }
 
-
+*/*  ESTILOS PARA LAS CAJAS DE TEXTO*/
+.dentro{
+   background:#FE2828;
+}
+.fuera{
+    background:black;/*mejor aqui que agregarlo en el mismo jquery que pesa mas*/
+}
 
 
 

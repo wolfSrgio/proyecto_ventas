@@ -1,5 +1,5 @@
 #inpumenubar{
-   display: none;/*desaparecemos la cajita del chekbox*/
+    display: none;/*desaparecemos la cajita del chekbox*/
 }
  /* el ~ <-- dice seleccionar algo*/
    #inpumenubar:checked ~ .menu{
@@ -72,7 +72,7 @@ header .contenedor {
     } /*ahora quitamos el boton de menu
     que  solo era para movil */ 
     header label{
-     display:none;
+        display:none;
     }
     /*quitamos el borde de las a*/
     .menu a{

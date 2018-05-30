@@ -1,14 +1,51 @@
+
+<?php
+
+session_start();
+
+//var_dump($_SESSION); // COMPRUEBO QUE  SE INICIARON BIEN LA SVARIABLES DE SESSION
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Wolf Events</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/visistante/fontello.css">
-        <link rel="stylesheet" href="css/visitante/mios.css">
+       
+        <link rel="stylesheet" href="css/visitante/modal.css">
+          <link rel="stylesheet" href="css/visitante/fontello.css">
          <link rel="stylesheet" href="css/visitante/inicio.css">
         <link rel="stylesheet" href="css/visitante/menu.css">
+
+
+
          <link href="img_paginas/iconolobo.png" rel="icon" type="image/x-icon"/><!-- icono de ventana--> 
+
+  <script src="js/jquery-3.3.1.js"></script>
+         <script src="js/modal.js"></script>
+
+
+<script>
+                 
+                 window.onload=function(){
+                     
+                    var ventanamod=document.getElementById("logea");
+                     ventanamod.onclick=abrirmod;/* esta funcion esta en modal.js */
+                     
+                     var  cerrarmodal=document.getElementById("cerrar_mod");
+                     cerrarmodal.onclick=cerrarmod;
+                    
+                     };
+                      </script>
+
+
+
+
     </head>
     <body>
         <header>
@@ -17,14 +54,79 @@
                 <input type="checkbox" id="inpumenubar">
                 <label for="inpumenubar" class="icon-menu"></label>
                 <nav class="menu">
-                    <a href="">logeate</a>
-                    <a href="">registrate</a>
-                    <a href="">Tus entradas</a>
-                    <a href="">Contacto</a>
+                    <?php
+                       if(isset($_SESSION['nom_cli'])){ /* ES MEJOR QUE PONER SOLO :   if(isset($_SESSION)))*/
+                           
+                         
+                           $usuari=$_SESSION['nom_cli'];//SI YA SOMOS USUARIOS REGISTRADOS
+                         
+                         
+                        echo '<span>BIENVENIDO '.$usuari.'</span>
+                              <a href="areapersonal.php">Tu perfil</a>
+                              <a href="index_ito.php?desconectarme=si">Cerrar Sesion</a>';
+                         }
+                       else{
+                    ?>
+                     <a  id="logea">logeate</a>
+                    <a href="registro.php">registrate</a>
+                     
+                   
+                    <?php
+                       }// fin del else
+                    ?>
+                  <a href="nosotros.php">Contacto</a>
+                   
+
                   </nav>
             </div> 
         </header>
         <main>
+       
+        <div id="ven_mod"><!-- ventana modal -->
+             
+             <h1 style="background:black; color: white;">INTRODUCE  TUS DATOS Y LOGEATE </h1>
+            
+             <div class="formula">
+                 
+                 <form id="formu" action="php/valida_login.php" method="POST">
+                     <label for="nom">email : </label>
+                     <input type="email" class="texto" id="ema" name="ema_log"><br>
+                       
+                     <label for="pass">Contrase&ntildea : </label>
+                     <input type="password" class="texto" id="pass" name="pasw_log"> <br><br>
+
+                      <input type="submit" value="enviar" id="btnenvia">  <!-- empleo un submit-->    
+                 </form>
+                 <?php   /*PARA COMPROBAR SI HAY ERROR*/
+                  if(isset($_GET['errorLogin']) ){
+                   
+                    if($_GET['errorLogin']=="vacio")
+                    echo "<span style='color:red'><strong>LOS CAMPOS  NO DEBEN QUEDAR VACIOS</strong></span>";
+                    else
+                    echo "<span style='color:red'><strong>ESE EMAIL NO ESTA REGISTRADO o contraseña incorrecta</strong></span>";
+               
+               
+                    echo '
+                     <script>
+                           abrirmod();// si tenemos un error abrira automaticamente el modal
+                     </script>
+                     
+                     ';
+                  } /*  FIND E COMPROBACION DE ERRORES */
+
+              ?>
+
+              
+                <div class="cerrar_mod" style="text-align:right ; margin-right: 40px;" ><span id="cerrar_mod"  style="font-size:13px;">cerrar login  </span>X</div>
+           </div> <!-- class=formula-->
+             
+           <h3 style="background:black; color: white;" >Si no tienes cuenta aun  <strong>Registrate</strong>  por favor</h3>
+      
+         </div><!-- fin de la ventana modal-->
+        
+        
+
+
             <section id="banner">
                 
                 <img src="img_paginas/baner.jpg">

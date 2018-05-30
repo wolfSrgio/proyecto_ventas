@@ -1,0 +1,118 @@
+/*asignamos una fuente*/
+@import url('https://fonts.googleapis.com/css?family=Hi+Melody');
+/*@import url(banner.css);
+@import url(blog.css);
+@import url(informa.css);*/
+
+*{
+    box-sizing: border-box;
+    /*este borde y padding  sea dentro del mismo elemento de caja  y no se expanda*/
+}
+
+body{
+    
+    font-family: 'Hi Melody', cursive;
+   /* background:#44322E;/*negro humo*/
+  /* background:yellow;*/
+}
+
+.contenedor{
+ /* les da un ancho y  centra*/
+   width:90%;
+   margin:auto;
+ 
+}
+
+
+header{
+   /* border:7px solid green;*/
+   /* background-color:#151515;/*quito el brackground para que
+    se vean solo las etiquetas  a y sus efectos*/
+    color:#fff;
+ 
+     position:fixed;/*se quede pegado */
+    /*para que comienzen desde la ezquina misma de la pantalla*/
+      margin-top:50px;
+      margin-left:86%; /*  centrare el fixed*/
+    
+      z-index:100;/*para que sea el header siempre que tape alos demas*/
+      text-align: center;
+}
+
+
+
+div.banner_nos{
+   /* border:5px solid yellow;*/
+    height:350px;/*altura tanto para ancho como para movil*/
+    background-image: url("../../img_paginas/lobo_nosotros2.jpg");
+    background-size: 100% 100%;/*ocupe todo el contenedor*/
+}
+
+
+section.contenido{
+    
+    border:7px solid yellow;
+    display:flex; /*por defecto lo pone en  ROW=FILA*/
+   /* flex-direction: row;*/
+   
+   /*display-flex : hace caber todos los elementos en una fila
+   modificando el tamaño de sus hijos para que entren  en el (contenedor-padre)*/
+   
+   flex-wrap: wrap;/* si agregamos esto , hace que los elementos hijos no pierdan su tamaño
+    y si no entran en la fila del padre , pues hacen un salto de linea.*/
+   padding:30px;
+   margin-top: 20px;
+}
+ 
+
+
+ div.contenido1{
+       
+      border:2px solid blue;
+      width:50%;
+   }
+   
+   
+ div.contenido2{
+       
+      border:2px solid red;
+      width:50%;
+   }
+   
+   .mapa{
+       margin-left: 85px ;
+       padding-bottom: 20px;
+   }
+   
+   
+   footer .contenedor{
+    color:white;
+    font-size: 25px;
+     flex-wrap: wrap;
+    /*justify-content: center;*/
+     background-color: green;
+   }
+  
+ 
+   .sociales {
+ 
+     background: #4B423F;/*gris  oscuro*/
+     width:100%;
+    text-align: right;
+   font-size: 28px;
+   margin: 0px; 
+    
+   }
+   
+   
+.sociales a{
+    color:#fff;/*gris  oscuro*/
+    text-decoration: none;
+    
+     transition: all 1.5s;/* efecta alos :hover etc*/
+}
+ 
+   .sociales a:hover{
+       
+       font-size: 56px;
+   }

@@ -1,3 +1,29 @@
+
+<?php
+
+include ("php/sesion.php");
+
+if(isset($_GET['desconectarme']))
+   {
+  
+    matasesion();
+   }
+
+  
+   if(isset($_SESSION['cargo']))// SI TIENE SESSION[ cargo], es que es un administrador
+   {                               // por lo tanto lo redirijo ala pagina de administrador
+  
+    header("location:administrador.php");
+   }else if(isset($_SESSION['nom_cli'])){ // si tiene esta sesion esque  ya estaba registrado como cliente
+        
+             header("location:visitante.php");
+             }
+
+
+
+?>
+
+
 <html>
     <head>
         <title>Wolf Events</title>
@@ -18,8 +44,11 @@
              window.onload=function(){
                  
                 var ventanamod=document.getElementById("log");
-                 ventanamod.onclick=abrirmod;
+                 ventanamod.onclick=abrirmod;/* esta funcion esta en modal.js */
                  
+                 var  cerrarmodal=document.getElementById("cerrar_mod");
+                 cerrarmodal.onclick=cerrarmod;
+                
                  };
                   </script>
         
@@ -35,7 +64,7 @@
             <ul>
                 <li><a  id="log"  href="#">Logeate</a></li>
                 <li><a href="registro.php">Registrate</a></li>
-                <li><a href="php/empiezo.php">Nosotros</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
              </ul>
          </div>
         
@@ -45,17 +74,40 @@
             
              <div class="formula">
                  
-                 <form id="formu" "action="">
-                     <label for="nom">Nombre : </label>
-                     <input type="text" class="texto" id="nom"><br>
+                 <form id="formu" action="php/valida_login.php" method="POST">
+                     <label for="nom">email : </label>
+                     <input type="email" class="texto" id="ema" name="ema_log"><br>
                        
                      <label for="pass">Contrase&ntildea : </label>
-                     <input type="password" class="texto" id="pass"> <br><br>
-                      <input type="button" value="enviar" id="btnenvia">      
+                     <input type="password" class="texto" id="pass" name="pasw_log"> <br><br>
+
+                      <input type="submit" value="enviar" id="btnenvia">  <!-- empleo un submit-->    
                  </form>
-                <div class="cerrar_mod" style="text-align:right ; margin-right: 40px;" ><span  style="font-size:13px;">cerrar login  </span>X</div>
+                 <?php   /*PARA COMPROBAR SI HAY ERROR*/
+                  if(isset($_GET['errorLogin']) ){
+                   
+                    if($_GET['errorLogin']=="vacio")
+                    echo "<span style='color:red'><strong>LOS CAMPOS  NO DEBEN QUEDAR VACIOS</strong></span>";
+                    else
+                    echo "<span style='color:red'><strong>ESE EMAIL NO ESTA REGISTRADO o contraseña incorrecta</strong></span>";
+               
+               
+                    echo '
+                     <script>
+                           abrirmod();// si tenemos un error abrira automaticamente el modal
+                     </script>
+                     
+                     ';
+                  } /*  FIND E COMPROBACION DE ERRORES */
+
+              ?>
+
+              
+                <div class="cerrar_mod" style="text-align:right ; margin-right: 40px;" ><span id="cerrar_mod"  style="font-size:13px;">cerrar login  </span>X</div>
            </div> <!-- class=formula-->
              
+           <h3 style="background:black; color: white;" >Si no tienes cuenta aun  <strong>Registrate</strong>  por favor</h3>
+      
          </div><!-- fin de la ventana modal-->
         
         
